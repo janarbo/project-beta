@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Person 2 - Which microservice?
+* Janar Bokeyhan - Service microservice
+* Peter Trinh - Sales microservice
 
 ## Design
 
