@@ -8,3 +8,35 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+
+async function loadManufaturers() {
+  const response = await fetch('http://localhost:8100/api/manufacturers/');
+  if (response.ok) {
+    const data = await response.json();
+    root.render(
+      <React.StrictMode>
+        <App manufacturers={data.manufacturers} />
+      </React.StrictMode>
+    );
+  } else {
+    console.error(response);
+  }
+}
+loadManufaturers();
+
+
+async function loadAutos() {
+  const response = await fetch('http://localhost:8100/api/automobiles/');
+  if (response.ok) {
+    const data = await response.json();
+    root.render(
+      <React.StrictMode>
+        <App autos = {data.autos} />
+      </React.StrictMode>
+    );
+  } else {
+    console.error(response);
+  }
+}
+loadAutos();
