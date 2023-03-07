@@ -30,7 +30,7 @@ class ModelList extends React.Component {
                             <tr key={model.href}>
                                 <td>{model.name}</td>
                                 <td>{model.manufacturer.name}</td>
-                                <td>{model.picture_url}</td>
+                                <td><img src={model.picture_url} width="200" height="150"></img></td>
                             </tr>
                         )
                     })}
