@@ -5,6 +5,7 @@ import ModelList from './ModelList';
 import ModelForm from './ModelForm';
 import AutoForm from './AutoForm';
 
+
 function App(props) {
 
   return (
@@ -14,17 +15,19 @@ function App(props) {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="models">
-            <Route path="" element={<ModelList models={props.models} />} />
+            <Route path="" element={<ModelList />} />
           </Route>
           <Route path="models">
             <Route path="new" element={<ModelForm />} />
           </Route>
-          <Route path="auto">
+          <Route path="automobiles">
+
             <Route path="new" element={<AutoForm />} />
           </Route>
+
         </Routes>
       </div>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 
