@@ -31,20 +31,20 @@ class AutomobileVOEncoder(ModelEncoder):
         "import_href",
         "vin",
         "sold",
-        "id",
     ]
 
 class SalesRecordEncoder(ModelEncoder):
     model = SalesRecord
     properties = [
-        "sale_person",
+        "sales_person",
         "customer",
         "price",
-        "vin",
+        "automobile",
+        "sold",
         "id",
     ]
     encoders = {
-        "sale_person": SalesPersonEncoder(),
+        "sales_person": SalesPersonEncoder(),
         "customer": CustomerEncoder(),
         "automobile": AutomobileVOEncoder(),
     }
@@ -134,17 +134,17 @@ def api_list_sales(request):
     else:
         content = json.loads(request.body)
         try:
-            vin = content["vin"]
+            vin = content["automobile"]
             automobile = AutomobileVO.objects.get(vin=vin)
-            content["vin"] = automobile
+            content["automobile"] = automobile
         except AutomobileVO.DoesNotExist:
             return JsonResponse(
                 {"message": "Not a valid vin"},
                 status=400,
             )
         try:
-            sales_person_id = content["sales_person"]
-            sales_person = SalesPerson.objects.get(id=sales_person_id)
+            sales_person_name = content["sales_person"]
+            sales_person = SalesPerson.objects.get(id=sales_person_name)
             content["sales_person"] = sales_person
         except SalesPerson.DoesNotExist:
             return JsonResponse(
@@ -152,15 +152,20 @@ def api_list_sales(request):
                 status=400,
             )
         try:
-            customer_id = content["customer"]
-            customer = Customer.objects.get(id=customer_id)
+            customer_name = content["customer"]
+            customer = Customer.objects.get(id=customer_name)
             content["customer"] = customer
         except Customer.DoesNotExist:
             return JsonResponse(
                 {"message": "Not a customer"},
                 status=400,
             )
-
+        sale = SalesRecord.objects.create(**content)
+        return JsonResponse(
+            sale,
+            encoders=SalesRecordEncoder,
+            safe=False
+        )
 
         #     automobile = AutomobileVO.objects.get(vin=content["automobile"])
         #     if automobile.sold == True:
