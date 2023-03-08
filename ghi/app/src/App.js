@@ -7,6 +7,9 @@ import AutoForm from './AutoForm';
 import ManufacturerList from './ManufacturerList';
 import ManufacturerForm from './ManufacturerForm';
 import AutoList from './AutoList'
+//import CreateAppointment from './CreateAppointment';
+//import AppointmentList from './AppointmentList';
+import TechnicianForm from './TechnicianForm';
 
 function App(props) {
 
@@ -29,6 +32,15 @@ function App(props) {
           <Route path="automobiles">
             <Route path="" element={<AutoList />} />
             <Route path="new" element={<AutoForm />} />
+          </Route>
+          <Route path="appointment">
+            <Route path="" element={<AutoList />} />
+            <Route path="new" element={<AutoForm />} />
+          </Route>
+          <Route path="services">
+            {/* <Route path="" element={<AppointmentList />}></Route> */}
+            {/* <Route path="new" element={<CreateAppointment />}></Route> */}
+            <Route path="technicians/new" element={<TechnicianForm />}></Route>
           </Route>
         </Routes>
       </div>
