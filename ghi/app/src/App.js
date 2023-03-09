@@ -7,6 +7,11 @@ import AutoForm from './AutoForm';
 import ManufacturerList from './ManufacturerList';
 import ManufacturerForm from './ManufacturerForm';
 import AutoList from './AutoList'
+import SalesPersonForm from './SalesPersonForm';
+import CustomerForm from './CustomerForm';
+import CustomerList from './CustomerList';
+import SalesList from './SalesList';
+
 
 function App(props) {
 
@@ -29,6 +34,16 @@ function App(props) {
           <Route path="automobiles">
             <Route path="" element={<AutoList />} />
             <Route path="new" element={<AutoForm />} />
+          </Route>
+          <Route path="salesperson">
+            <Route path="new" element={<SalesPersonForm />} />
+          </Route>
+          <Route path="customers">
+            <Route path="" element={<CustomerList />} />
+            <Route path="new" element={<CustomerForm />} />
+          </Route>
+          <Route path="sales">
+            <Route path="" element={<SalesList />} />
           </Route>
         </Routes>
       </div>

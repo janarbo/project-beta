@@ -16,26 +16,29 @@ class ModelList extends React.Component {
     }
     render() {
         return (
-            <table className="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Manufacturer</th>
-                        <th>Picture</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.models.map(model => {
-                        return (
-                            <tr key={model.href}>
-                                <td>{model.name}</td>
-                                <td>{model.manufacturer.name}</td>
-                                <td><img src={model.picture_url} width="200" height="150"></img></td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+            <div>
+                <h1>Models</h1>
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Manufacturer</th>
+                            <th>Picture</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.models.map(model => {
+                            return (
+                                <tr key={model.href}>
+                                    <td>{model.name}</td>
+                                    <td>{model.manufacturer.name}</td>
+                                    <td><img src={model.picture_url} width="200" height="150"></img></td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }
