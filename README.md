@@ -42,7 +42,17 @@ Open the README.md file and add your name as "Person 1" or "Person 2", along wit
 
 ## Inventory
 
-Explain here.
+#### Overview
+The inventory micorservice allows the user to create/update, list, view details, and delete for Manufactuers, Vehicle models, and Automobiles.
+
+#### Manufacturer
+| Action                | Method | URL                                    |
+| ----------------------| ------ | -------------------------------------- |
+| List Manufacturer    |  GET   | http://localhost:8100/api/manufacturers/ |
+| Create a Maufacturer |  Post  | http://localhost:8100/api/manufacturers/ |
+| Show Manufacturer Detail     |  GET   | http://localhost:8100/api/automobiles/:vin/ |
+| Update a Manufacturer|  Post  | http://localhost:8100/api/automobiles/:vin/|
+| Delete a Maufacturer |  Post  | http://localhost:8100/api/automobiles/:vin/|
 
 ## Service microservice
 
