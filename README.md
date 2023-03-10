@@ -116,6 +116,103 @@ The inventory micorservice allows the user to create/update, list, view details,
 
 </details>
 
+#### Vehicle Model
+| Action                | Method | URL                                    |
+| ----------------------| ------ | -------------------------------------- |
+| List Vehicle Modle    |  GET   | http://localhost:8100/api/models/ |
+| Create a Vehicle Model |  Post  | http://localhost:8100/api/models/ |
+| Show Vehicle Model Detail     |  GET   | http://localhost:8100/api/models/:id/ |
+| Update a Vehicle Model|  Put  | http://localhost:8100/api/models/:id/|
+| Delete a Vehicle Model |  Del | http://localhost:8100/api/models/:id/|
+
+<details>
+<summary><strong>List Vehicle Models</strong></summary>
+<br>
+
+```
+{
+			"href": "/api/models/7/",
+			"id": 7,
+			"name": "RS 3",
+			"picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqxrt1B-xGMVcXPnXJLv8R94Y4Q1ebaKC3IovoStc0L4TcxnyP",
+			"manufacturer": {
+				"href": "/api/manufacturers/4/",
+				"id": 4,
+				"name": "Audi"
+			}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Create and Update a Vehicle Model</strong></summary>
+<br>
+
+#### Input:
+```
+{
+  "name": "RS 3",
+  "picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqxrt1B-xGMVcXPnXJLv8R94Y4Q1ebaKC3IovoStc0L4TcxnyP",
+  "manufacturer_id": 4
+}
+```
+#### Output:
+```
+{
+	"href": "/api/models/6/",
+	"id": 6,
+	"name": "RS 3",
+	"picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqxrt1B-xGMVcXPnXJLv8R94Y4Q1ebaKC3IovoStc0L4TcxnyP",
+	"manufacturer": {
+		"href": "/api/manufacturers/4/",
+		"id": 4,
+		"name": "Audi"
+	}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Detail of Vehicle Model</strong></summary>
+<br>
+
+```
+{
+			"href": "/api/models/5/",
+			"id": 5,
+			"name": "Model Y",
+			"picture_url": "https://www.topgear.com/sites/default/files/2022/03/TopGear%20-%20Tesla%20Model%20Y%20-%20001.jpg?w=892&h=502",
+			"manufacturer": {
+				"href": "/api/manufacturers/3/",
+				"id": 3,
+				"name": "Tesla"
+			}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Delete a Vehicle Model</strong></summary>
+<br>
+
+```
+{
+	"id": null,
+	"name": "Sebring",
+	"picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Chrysler_Sebring_front_20090302.jpg/320px-Chrysler_Sebring_front_20090302.jpg",
+	"manufacturer": {
+		"href": "/api/manufacturers/1/",
+		"id": 1,
+		"name": "Toyota"
+	}
+}
+```
+
+</details>
+
 ## Service microservice
 
 Explain your models and integration with the inventory
@@ -133,7 +230,7 @@ microservice, here.
 
 The sales microservice will poll data from the automobile model in inventory and put the data into AutomobileVO model.
 
-#### Sales Person:
+#### Sales Person
 
 | Action                | Method | URL                                    |
 | ----------------------| ------ | -------------------------------------- |
@@ -178,7 +275,7 @@ The sales microservice will poll data from the automobile model in inventory and
 
 </details>
 
-#### Customer:
+#### Customer
 | Action                | Method | URL                                    |
 | ----------------------| ------ | -------------------------------------- |
 | List of Customer    |  GET   | http://localhost:8090/api/salesperson/ |
@@ -225,7 +322,7 @@ The sales microservice will poll data from the automobile model in inventory and
 
 </details>
 
-#### Sales:
+#### Sales
 | Action                | Method | URL                                    |
 | ----------------------| ------ | -------------------------------------- |
 | List of Sales   |  GET   | http://localhost:8090/api/sales/ |
