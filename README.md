@@ -111,3 +111,44 @@ The sales microservice will poll data from the automobile model in inventory and
 | ----------------------| ------ | -------------------------------------- |
 | List of Customer    |  GET   | http://localhost:8090/api/salesperson/ |
 | Create a Customer |  Post  | http://localhost:8090/api/salesperson/ |
+
+<details>
+<summary><strong>List of Customer</strong></summary>
+<br>
+
+```
+{
+			"href": "/api/customer/1/",
+			"name": "Ash Ketchum",
+			"address": "Pallet Town",
+			"phone": "123456789",
+			"id": 1
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Create a Customer</strong></summary>
+<br>
+
+#### Input:
+```
+{
+	"name": "Yoshi",
+	"address": "Town",
+	"phone": "546387902"
+}
+```
+#### Output:
+```
+{
+	"href": "/api/customer/4/",
+	"name": "Yoshi",
+	"address": "Town",
+	"phone": "546387902",
+	"id": 4
+}
+```
+
+</details>
