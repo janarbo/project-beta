@@ -82,7 +82,7 @@ This application is designed to help manage and track automobile service appoint
 <details open>
 <summary>List Technicians Output</summary>
 <br>
-```
+```json
 {
 	"technicians": [
 		{
