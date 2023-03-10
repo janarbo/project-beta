@@ -68,8 +68,13 @@ The sales microservice will poll data from the automobile model in inventory and
 | List Sales Person     |  GET   | http://localhost:8090/api/salesperson/ |
 | Create a Sales Person |  Post  | http://localhost:8090/api/salesperson/ |
 
-<details open>
-<summary>List of Sales Person Example</summary>
+<details>
+<summary>**List of Sales Person Example**</summary>
 <br>
-Well, you asked for it!
+	{
+			"href": "/api/salesperson/2/",
+			"name": "Mario",
+			"number": "5374120",
+			"id": 2
+		},
 </details>
