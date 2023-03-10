@@ -51,5 +51,11 @@ microservice, here.
 
 ## Sales microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+## Models
+* Sales person
+* Customer
+* Sales record
+* AutomobileVO
+
+## Integration with Inventory Microservice 
+The sales microservice will poll data from the automobile model in inventory and put the data into AutomobileVO model.
