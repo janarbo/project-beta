@@ -83,7 +83,6 @@ This application is designed to help manage and track automobile service appoint
 <summary>List Technicians Output</summary>
 <br>
 ```
-
     {
         "technicians": [
             {
@@ -94,7 +93,6 @@ This application is designed to help manage and track automobile service appoint
             },
         ]
     }
-
 ```
 </details>
 
