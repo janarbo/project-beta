@@ -14,17 +14,18 @@ function SalesPersonForm() {
     }
 
     const handleSubmit = async (event) => {
+        event.preventDefault()
         const data = {};
         data.name = name;
         data.number = number;
 
         const salespersonUrl = 'http://localhost:8090/api/salesperson/';
         const fetchConfig = {
-            methods: "post",
+            method: "post",
             body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'applications/json',
-            }
+                'Content-Type': 'application/json'
+            },
         };
 
         const response = await fetch(salespersonUrl, fetchConfig);

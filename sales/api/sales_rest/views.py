@@ -40,8 +40,6 @@ class SalesRecordEncoder(ModelEncoder):
         "customer",
         "price",
         "automobile",
-        "sold",
-        "id",
     ]
     encoders = {
         "sales_person": SalesPersonEncoder(),
@@ -134,8 +132,16 @@ def api_list_sales(request):
     else:
         content = json.loads(request.body)
         try:
+            # make an if statement to determine sold or not
             vin = content["automobile"]
             automobile = AutomobileVO.objects.get(vin=vin)
+            if automobile.sold == True:
+                return JsonResponse(
+                    {"message": "Automobile already sold"},
+                    status=400,
+                )
+            automobile.sold = True
+            automobile.save()
             content["automobile"] = automobile
         except AutomobileVO.DoesNotExist:
             return JsonResponse(
@@ -161,9 +167,10 @@ def api_list_sales(request):
                 status=400,
             )
         sale = SalesRecord.objects.create(**content)
+
         return JsonResponse(
             sale,
-            encoders=SalesRecordEncoder,
+            encoder=SalesRecordEncoder,
             safe=False
         )
 

@@ -13,6 +13,7 @@ class SalesList extends React.Component {
         if (response.ok) {
             const data = await response.json();
             this.setState({ sales: data.sales })
+
         };
     }
     render() {
@@ -32,9 +33,10 @@ class SalesList extends React.Component {
                     <tbody>
                         {this.state.sales.map(sale => {
                             return (
-                                <tr key={sale.id}>
-                                    <td>{sale.sales_person}</td>
-                                    <td>{sale.customer}</td>
+                                <tr key={sale.sales_person.id}>
+                                    <td>{sale.sales_person.name}</td>
+                                    <td>{sale.sales_person.number}</td>
+                                    <td>{sale.customer.name}</td>
                                     <td>{sale.automobile.vin}</td>
                                     <td>{sale.price}</td>
                                 </tr>

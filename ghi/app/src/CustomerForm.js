@@ -19,6 +19,7 @@ function CustomerForm() {
     }
 
     const handleSubmit = async (event) => {
+        event.preventDefault()
         const data = {};
         data.name = name;
         data.address = address;
@@ -26,7 +27,7 @@ function CustomerForm() {
 
         const customerUrl = 'http://localhost:8090/api/customer/'
         const fetchConfig = {
-            methods: "post",
+            method: "post",
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'applications/json',
