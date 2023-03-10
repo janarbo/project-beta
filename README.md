@@ -71,15 +71,13 @@ The sales microservice will poll data from the automobile model in inventory and
 <details>
 <summary><strong>List of Sales Person</strong></summary>
 <br>
-```
-docker volume create beta-data
-docker-compose build
-docker-compose up
-```
-</details>
 
 ```
 docker volume create beta-data
 docker-compose build
 docker-compose up
 ```
+
+</details>
+
+
