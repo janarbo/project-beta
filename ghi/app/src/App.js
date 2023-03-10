@@ -15,6 +15,8 @@ import SearchAppointment from './SearchAppointment';
 import SalesList from './SalesList';
 import SalesPersonForm from './SalesPersonForm';
 import SalesRecordForm from './SalesRecordForm';
+import SalesPersonHistory from './SalesPersonHistory';
+import CustomerForm from './CustomerForm';
 
 
 function App() {
@@ -52,9 +54,11 @@ function App() {
                           </Route>
                           <Route path="sales">
                               <Route path="" element={<SalesList/>}/>
-                                <Route path="new"  element={<SalesRecordForm/>} />
+                                <Route path="customer" element={<CustomerForm />} />
+                                <Route path="new"  element={<SalesRecordForm />} />
                                 <Route path="salesperson">
                                     <Route path="new" element={<SalesPersonForm />} />
+                                    <Route path="history" element={<SalesPersonHistory/>} />
                               </Route>
                           </Route>
                       </Routes>

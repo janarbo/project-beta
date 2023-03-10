@@ -16,7 +16,6 @@ class AppointmentList extends React.Component {
         const response = await fetch(url)
         if (response.ok) {
             const data = await response.json();
-
             this.setState({
                 appointments: data.appointments.filter(appointment => appointment.is_finished === false)
             })
@@ -29,7 +28,6 @@ class AppointmentList extends React.Component {
             const autos = autosData.autos;
             this.setState({autos: autos})
         }
-
 
         const filteredAppointments = this.state.appointments.filter(appointment => {
             return this.state.autos.some(auto => {
@@ -142,9 +140,19 @@ class AppointmentList extends React.Component {
                                     <td>{ appointment.reason }</td>
                                     <td>{ appointment.is_vip ? 'YES' : 'NO' }</td>
                                     <td>
-                                        <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <button type="button" className="btn btn-danger" onClick={() => this.handleCancelAppointment(appointment.id)} >Cancel</button>
-                                            <button type="button" className="btn btn-success" onClick={() => this.handleFinishAppointment(appointment.id)} >Finished</button>
+                                        <div className="btn-group"
+                                        role="group"
+                                        aria-label="Basic mixed styles example">
+                                            <button type="button"
+                                            className="btn btn-danger"
+                                            onClick={() => this.handleCancelAppointment(appointment.id)} >
+                                                Cancel
+                                            </button>
+                                            <button type="button"
+                                            className="btn btn-success"
+                                            onClick={() => this.handleFinishAppointment(appointment.id)} >
+                                                Finished
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>

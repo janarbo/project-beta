@@ -22,7 +22,6 @@ function TechnicianForm() {
         const data = {};
         data.name = name;
         data.employee_number = employeeNum;
-        console.log(data)
         const url = 'http://localhost:8080/api/technicians/';
         const fetchConfig = {
             method: "post",
@@ -32,13 +31,12 @@ function TechnicianForm() {
             },
         };
         const response = await fetch(url, fetchConfig);
-        console.log(response)
         if (response.ok) {
             setName('');
             setEmployeeNum('');
 
-            }
         }
+    }
 
 
     return (

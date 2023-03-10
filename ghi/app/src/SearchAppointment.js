@@ -12,7 +12,6 @@ const SearchAppointment = () => {
         const getAppointments = async () => {
             const appointmentUrl = 'http://localhost:8080/api/appointments/';
             const response = await fetch(appointmentUrl);
-            console.log(response)
             if (response.ok) {
                 const data = await response.json();
                 setAppointmenets(data.appointments)
