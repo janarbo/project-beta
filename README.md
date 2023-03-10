@@ -73,10 +73,8 @@ The sales microservice will poll data from the automobile model in inventory and
 <br>
 ```
 {
-			"href": "/api/salesperson/2/",
-			"name": "Mario",
-			"number": "5374120",
-			"id": 2
-		},
+	"name": "Jeff",
+	"employee_number": "1"
+}
 ```
 </details>
