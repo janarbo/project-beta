@@ -51,8 +51,70 @@ The inventory micorservice allows the user to create/update, list, view details,
 | List Manufacturer    |  GET   | http://localhost:8100/api/manufacturers/ |
 | Create a Maufacturer |  Post  | http://localhost:8100/api/manufacturers/ |
 | Show Manufacturer Detail     |  GET   | http://localhost:8100/api/automobiles/:vin/ |
-| Update a Manufacturer|  Post  | http://localhost:8100/api/automobiles/:vin/|
-| Delete a Maufacturer |  Post  | http://localhost:8100/api/automobiles/:vin/|
+| Update a Manufacturer|  Put  | http://localhost:8100/api/automobiles/:vin/|
+| Delete a Maufacturer |  Del | http://localhost:8100/api/automobiles/:vin/|
+
+<details>
+<summary><strong>List of Maufactuers</strong></summary>
+<br>
+
+```
+{
+			"href": "/api/manufacturers/1/",
+			"id": 1,
+			"name": "Toyota"
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Create and Update</strong></summary>
+<br>
+
+#### Input:
+```
+{
+  "name": "Audi"
+}
+```
+#### Ouput:
+```
+{
+	"href": "/api/manufacturers/4/",
+	"id": 4,
+	"name": "Audi"
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Detail of Manufacturer</strong></summary>
+<br>
+
+```
+{
+			"href": "/api/manufacturers/1/",
+			"id": 1,
+			"name": "Toyota"
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Delete a Manufacturer</strong></summary>
+<br>
+
+```
+{
+			"id": null,
+			"name": "Toyota"
+}
+```
+
+</details>
 
 ## Service microservice
 
