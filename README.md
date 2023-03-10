@@ -7,7 +7,7 @@ Team:
 
 ## Design
 
-excalidraw file
+![image info](images/project-beta-diagram.png)
 
 
 To tackle this project, our team has decided to break down the application into three distinct microservices - Inventory, Service, and Sales. Each microservice will have its own unique set of data, which can be used by other microservices as value objects within their respective domains.
