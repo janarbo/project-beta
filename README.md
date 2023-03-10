@@ -69,12 +69,23 @@ The sales microservice will poll data from the automobile model in inventory and
 | Create a Sales Person |  Post  | http://localhost:8090/api/salesperson/ |
 
 <details>
-<summary>**List of Sales Person Example**</summary>
+<summary>**List of Sales Person**</summary>
 <br>
-	{
-			"href": "/api/salesperson/2/",
-			"name": "Mario",
-			"number": "5374120",
-			"id": 2
+{
+	"customers": [
+		{
+			"id": 1,
+			"name": "Hack Reactor",
+			"address": "119 Nueces St 8, Austin, TX 78701",
+			"phone_number": "720-615-0225"
 		},
+		{
+			"id": 2,
+			"name": "Hack Reactor",
+			"address": "119 Nueces St, Austin, TX 78701",
+			"phone_number": "720-615-0225"
+		}
+	]
+}
+
 </details>
