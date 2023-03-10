@@ -82,20 +82,21 @@ This application is designed to help manage and track automobile service appoint
 <details open>
 <summary>List Technicians Output</summary>
 <br>
-    ```
 
-        {
-            "technicians": [
-                {
-                    "href": "/api/technicians/1/",
-                    "name": "Lilian Will",
-                    "employee_number": 2578,
-                    "id": 1
-                },
-            ]
-        }
-    ```
-    
+```
+
+    {
+        "technicians": [
+            {
+                "href": "/api/technicians/1/",
+                "name": "Lilian Will",
+                "employee_number": 2578,
+                "id": 1
+            },
+        ]
+    }
+```
+
 </details>
 
 
