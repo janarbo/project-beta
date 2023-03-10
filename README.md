@@ -122,7 +122,7 @@ Service microservice polls the Inventory microservice every 60 seconds for autom
 
 Input
 ```
-   {
+{
 	"name" : "Ben Mark",
 	"employee_number" : 2580
 }
@@ -145,7 +145,7 @@ Output
 <br>
 
 ```
-   {
+{
 	"href": "/api/technicians/3/",
 	"name": "Ben Mark",
 	"employee_number": 2580,
