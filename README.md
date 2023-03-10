@@ -228,3 +228,13 @@ The sales microservice will poll data from the automobile model in inventory and
 ```
 
 </details>
+
+#### Poller
+* A poller to poll the Inventory API for Automobile model
+
+#### React
+* Have a list detail of sales
+* Sales person downdrop to show case all of their sales history
+* Have a create Sales Person Form
+* Have a create Customer Form
+* Have a create Sales Record Form
