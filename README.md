@@ -60,7 +60,7 @@ The inventory micorservice allows the user to create/update, list, view details,
 | Delete a Maufacturer |  Del | http://localhost:8100/api/automobiles/:vin/|
 
 <details>
-<summary><strong>List of Maufactuers</strong></summary>
+<summary><strong>List of Maufacturers</strong></summary>
 <br>
 
 ```
@@ -74,7 +74,7 @@ The inventory micorservice allows the user to create/update, list, view details,
 </details>
 
 <details>
-<summary><strong>Create and Update</strong></summary>
+<summary><strong>Create and Update Maufacturers</strong></summary>
 <br>
 
 #### Input:
