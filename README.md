@@ -76,8 +76,8 @@ This application is designed to help manage and track automobile service appoint
 |  ------------------| ----- | --------------------------------------|
 | List Technicians      |  GET  |http://localhost:8080/api/technicians/ |
 | Create a Technician   |  POST    |http://localhost:8080/api/technicians/ |
-| Show Technician Detail|  POST   |http://localhost:8080/api/technicians/:id/ |
-| Delete a Technician   |  Delete |http://localhost:8080/api/technicians/:id/ |
+| Show Technician Detail  |  POST    |http://localhost:8080/api/technicians/:id |
+
 
 <details open>
 <summary>List Technicians Output</summary>
@@ -93,8 +93,52 @@ This application is designed to help manage and track automobile service appoint
                 "employee_number": 2578,
                 "id": 1
             },
+            {
+                "href": "/api/technicians/3/",
+                "name": "Jonny Sym",
+                "employee_number": 2579,
+                "id": 2
+		    },
         ]
     }
+```
+
+</details>
+
+<details open>
+<summary>Create a Technician Input & Output</summary>
+<br>
+
+```
+   {
+	"name" : "Ben Mark",
+	"employee_number" : 2580
+}
+```
+
+```
+{
+	"href": "/api/technicians/3/",
+	"name": "Ben Mark",
+	"employee_number": 2580,
+	"id": 8
+}
+```
+
+</details>
+
+<details open>
+<summary>Show Technician Detail</summary>
+<br>
+
+```
+
+   {
+	"href": "/api/technicians/3/",
+	"name": "Ben Mark",
+	"employee_number": 2580,
+	"id": 4
+}
 ```
 
 </details>
