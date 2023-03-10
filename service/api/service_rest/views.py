@@ -14,7 +14,7 @@ class AutomobileVOEncoder():
         "year",
     ]
 
-    
+
 class TechnicianDetailEncoder(ModelEncoder):
     model = Technician
     properties = [
@@ -99,7 +99,7 @@ def api_show_appointment(request, pk):
                 safe=False,
             )
         except Appointment.DoesNotExist:
-            return JsonResponse({"message": "Does not exist"})
+            return JsonResponse({"message": "appointment deleted"})
     else:
         content = json.loads(request.body)
         Appointment.objects.filter(id=pk).update(**content)
@@ -149,7 +149,7 @@ def api_show_technician(request, pk):
                 safe=False,
             )
         except Technician.DoesNotExist:
-            return JsonResponse({"message": "Does not exist"})
+            return JsonResponse({"message": "technician deleted"})
     else:  # PUT
         try:
             content = json.loads(request.body)
