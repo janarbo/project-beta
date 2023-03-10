@@ -55,7 +55,12 @@ This application is designed to help manage and track automobile service appoint
 
 **URL and Port**: localhost:8080
 
-### Back_End
+### Front-End
+
+The front-end of the application provides a variety of features for managing appointments and tracking service information. It allows users to create appointment forms with a variety of input fields. These input fields include the VIN , customer name, date, time, reason for the appointment, and technician assigned to the job. Users can use click button to cancel or finish an  appointment.It also allows users to create a technician by using a technician create form.
+
+
+### Back-End
 
 #### Service Models:
 
@@ -69,14 +74,18 @@ This application is designed to help manage and track automobile service appoint
 
 **AutomobileVO**: This model contains information about a customer's automobile and is considered a value object because it has no identity or life cycle. The data stored within this model is used to determine if the customer qualifies as a VIP and should not be updated or deleted. The properties of the AutomobileInfo model include vin, year, color.
 
-### Restful API:
+### Polling
+Service microservice polls the Inventory microservice every 60 seconds for automobile updates.
+
+
+### Restful API (PORT (8080)):
 
 ### Technicians:
 | Action             | Method   | URL |
 |  ------------------| ----- | --------------------------------------|
 | List Technicians      |  GET  |http://localhost:8080/api/technicians/ |
 | Create a Technician   |  POST    |http://localhost:8080/api/technicians/ |
-| Show Technician Detail  |  POST    |http://localhost:8080/api/technicians/:id |
+| Show Technician Detail  |  POST    |http://localhost:8080/api/technicians/:id/ |
 
 
 <details open>
@@ -109,6 +118,7 @@ This application is designed to help manage and track automobile service appoint
 <summary>Create a Technician Input & Output</summary>
 <br>
 
+Input
 ```
    {
 	"name" : "Ben Mark",
@@ -116,6 +126,7 @@ This application is designed to help manage and track automobile service appoint
 }
 ```
 
+Output
 ```
 {
 	"href": "/api/technicians/3/",
@@ -128,7 +139,7 @@ This application is designed to help manage and track automobile service appoint
 </details>
 
 <details open>
-<summary>Show Technician Detail</summary>
+<summary>Show Technician Details Output</summary>
 <br>
 
 ```
@@ -148,6 +159,129 @@ This application is designed to help manage and track automobile service appoint
 
 
 ### Appointments:
+| Action             | Method   | URL |
+|  ------------------| ----- | --------------------------------------|
+| List Appointments  |  GET   |http://localhost:8080/api/appointments/ |
+| Create an Appointment |  POST    |http://localhost:8080/api/appointments/ |
+| Show Appointment Detail  |  GET    |http://localhost:8080/api/appointments/:id/ |
+
+
+<details open>
+<summary>List Appointments Output</summary>
+<br>
+
+```
+   {
+	"appointments": [
+		{
+			"href": "/api/appointments/8/",
+			"id": 8,
+			"vin": "123123138687452",
+			"customer_name": "jj kk ss",
+			"reason": "Tire test",
+			"is_finished": true,
+			"is_vip": false,
+			"technician": {
+				"href": "/api/technicians/1/",
+				"name": "Lilian Will",
+				"employee_number": 2578,
+				"id": 1
+			},
+			"date": "2023-03-29",
+			"time": "23:04:00"
+		},
+		{
+			"href": "/api/appointments/5/",
+			"id": 5,
+			"vin": "1C3CC5FB2AN120174",
+			"customer_name": "Janar",
+			"reason": "Washing",
+			"is_finished": true,
+			"is_vip": true,
+			"technician": {
+				"href": "/api/technicians/3/",
+				"name": "Jonny Sym",
+				"employee_number": 2579,
+				"id": 3
+			},
+			"date": "2024-01-01",
+			"time": "09:00:00"
+		},
+	]
+}
+```
+
+</details>
+
+<details open>
+<summary>Create Appointment Input and Output</summary>
+<br>
+
+Input
+```
+  {
+	"customer_name": "Janar",
+	"vin":"1C3CC5FB2AN120174",
+	"technician": "3",
+	"reason":"Washing",
+	"date" : "2024-01-01",
+	"time" : "09:00:00"
+
+
+}
+```
+
+Output
+```
+{
+	"href": "/api/appointments/5/",
+	"id": 5,
+	"vin": "1C3CC5FB2AN120174",
+	"customer_name": "Janar",
+	"reason": "Washing",
+	"is_finished": false,
+	"is_vip": false,
+	"technician": {
+		"href": "/api/technicians/3/",
+		"name": "Jonny Sym",
+		"employee_number": 2579,
+		"id": 3
+	},
+	"date": "2024-01-01",
+	"time": "09:00:00"
+}
+```
+
+</details>
+
+<details open>
+<summary>Show Appointment Detail</summary>
+<br>
+
+Output
+```
+{
+	"href": "/api/appointments/7/",
+	"id": 7,
+	"vin": "123143464567",
+	"customer_name": "cc",
+	"reason": "Tire test",
+	"is_finished": false,
+	"is_vip": false,
+	"technician": {
+		"href": "/api/technicians/4/",
+		"name": "Ben Mark",
+		"employee_number": 6226,
+		"id": 4
+	},
+	"date": "2023-03-29",
+	"time": "11:00:00"
+}
+```
+
+</details>
+
+
 
 ## Sales microservice
 
