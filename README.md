@@ -152,3 +152,79 @@ The sales microservice will poll data from the automobile model in inventory and
 ```
 
 </details>
+
+#### Sales:
+| Action                | Method | URL                                    |
+| ----------------------| ------ | -------------------------------------- |
+| List of Sales   |  GET   | http://localhost:8090/api/sales/ |
+| Create a Sale |  Post  | http://localhost:8090/api/sales/ |
+
+<details>
+<summary><strong>List of Sales</strong></summary>
+<br>
+
+```
+{
+			"sales_person": {
+				"href": "/api/salesperson/2/",
+				"name": "Mario",
+				"number": "5374120",
+				"id": 2
+			},
+			"customer": {
+				"href": "/api/customer/3/",
+				"name": "Brock",
+				"address": "Pewter City",
+				"phone": "123789456",
+				"id": 3
+			},
+			"price": "50000",
+			"automobile": {
+				"import_href": "/api/automobiles/ZYX987WUT654RSQ32/",
+				"vin": "ZYX987WUT654RSQ32",
+				"sold": true
+			}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Create a Sale</strong></summary>
+<br>
+
+#### Input:
+```
+{
+	"price": "45000",
+	"automobile": "567ERT1123PLCMD94",
+	"customer": 2,
+	"sales_person": 4
+}
+```
+#### Output:
+```
+{
+	"sales_person": {
+		"href": "/api/salesperson/4/",
+		"name": "Luigi",
+		"number": "6412373",
+		"id": 4
+	},
+	"customer": {
+		"href": "/api/customer/2/",
+		"name": "Misty",
+		"address": "Cerulean City",
+		"phone": "987654321",
+		"id": 2
+	},
+	"price": "45000",
+	"automobile": {
+		"import_href": "/api/automobiles/567ERT1123PLCMD94/",
+		"vin": "567ERT1123PLCMD94",
+		"sold": false
+	}
+}
+```
+
+</details>
