@@ -51,17 +51,17 @@ microservice, here.
 
 ## Sales microservice
 
-**Model**
+#### Model
 * Sales person
 * Customer
 * Sales record
 * AutomobileVO
 
-**Integration with Inventory Microservice**
+#### Integration with Inventory Microservice
 
 The sales microservice will poll data from the automobile model in inventory and put the data into AutomobileVO model.
 
-**Sales Person:**
+#### Sales Person:
 
 | Action                | Method | URL                                    |
 | ----------------------| ------ | -------------------------------------- |
