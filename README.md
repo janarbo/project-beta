@@ -50,14 +50,14 @@ Explain here.
 
 This application is designed to help manage and track automobile service appointments.
 - Users can create appointments using a user-friendly form, which includes fields for vehicle identification number (VIN), customer name, date/time, reason for appointment, and technician assigned.
-- Allows users to view a comprehensive list of scheduled appointments, which includes appointment status (canceled, or finished) and indicate if a customer is VIP based on the vin number provided in the appointment form.
+- Allows users to view a comprehensive list of scheduled appointments, which indicates if a customer is VIP based on the vin number provided in the appointment form.
 - Includes a search bar functionality that allows users to search for specific appointments by vin number.
 
 **URL and Port**: localhost:8080
 
 ### Front-End
 
-The front-end of the application provides a variety of features for managing appointments and tracking service information. It allows users to create appointment forms with a variety of input fields. These input fields include the VIN , customer name, date, time, reason for the appointment, and technician assigned to the job. Users can use click button to cancel or finish an  appointment.It also allows users to create a technician by using a technician create form.
+The front-end of the application provides a variety of features for managing appointments and tracking service information. It allows users to create appointment forms with a variety of input fields. These input fields include the VIN , customer name, date, time, reason for the appointment, and technician assigned to the job. Users can use click button to cancel or finish an  appointment.It also allows users to create a technician by using a technician create form. It also allows users to use a search bar to search for specific appointments by vin number.
 
 
 ### Back-End
@@ -163,7 +163,11 @@ Output
 |  ------------------| ----- | --------------------------------------|
 | List Appointments  |  GET   |http://localhost:8080/api/appointments/ |
 | Create an Appointment |  POST    |http://localhost:8080/api/appointments/ |
-| Show Appointment Detail  |  GET    |http://localhost:8080/api/appointments/:id/ |
+| Show an Appointment Detail  |  GET    |http://localhost:8080/api/appointments/:id/ |
+| Update an Appointment  |  PUT   |http://localhost:8080/api/appointments/:id/ |
+| Delete an Appointment  |  DELETE   |http://localhost:8080/api/appointments/:id/ |
+
+
 
 
 <details open>
@@ -171,43 +175,43 @@ Output
 <br>
 
 ```
-   {
-	"appointments": [
-		{
-			"href": "/api/appointments/8/",
-			"id": 8,
-			"vin": "123123138687452",
-			"customer_name": "jj kk ss",
-			"reason": "Tire test",
-			"is_finished": true,
-			"is_vip": false,
-			"technician": {
-				"href": "/api/technicians/1/",
-				"name": "Lilian Will",
-				"employee_number": 2578,
-				"id": 1
-			},
-			"date": "2023-03-29",
-			"time": "23:04:00"
-		},
-		{
-			"href": "/api/appointments/5/",
-			"id": 5,
-			"vin": "1C3CC5FB2AN120174",
-			"customer_name": "Janar",
-			"reason": "Washing",
-			"is_finished": true,
-			"is_vip": true,
-			"technician": {
-				"href": "/api/technicians/3/",
-				"name": "Jonny Sym",
-				"employee_number": 2579,
-				"id": 3
-			},
-			"date": "2024-01-01",
-			"time": "09:00:00"
-		},
-	]
+{
+    "appointments": [
+        {
+            "href": "/api/appointments/8/",
+            "id": 8,
+            "vin": "123123138687452",
+            "customer_name": "jj kk ss",
+            "reason": "Tire test",
+            "is_finished": true,
+            "is_vip": false,
+            "technician": {
+                "href": "/api/technicians/1/",
+                "name": "Lilian Will",
+                "employee_number": 2578,
+                "id": 1
+            },
+            "date": "2023-03-29",
+            "time": "23:04:00"
+        },
+        {
+            "href": "/api/appointments/5/",
+            "id": 5,
+            "vin": "1C3CC5FB2AN120174",
+            "customer_name": "Janar",
+            "reason": "Washing",
+            "is_finished": true,
+            "is_vip": true,
+            "technician": {
+                "href": "/api/technicians/3/",
+                "name": "Jonny Sym",
+                "employee_number": 2579,
+                "id": 3
+            },
+            "date": "2024-01-01",
+            "time": "09:00:00"
+        },
+    ]
 }
 ```
 
@@ -276,6 +280,59 @@ Output
 	},
 	"date": "2023-03-29",
 	"time": "11:00:00"
+}
+```
+
+</details>
+
+<details open>
+<summary>Update Appointment Input and Output</summary>
+<br>
+
+Input
+```
+{
+	"customer_name": "Jimmy",
+	"vin":"1C3CC12333N120174",
+	"technician": "4",
+	"reason":"Washing",
+	"date" : "2024-01-01",
+	"time" : "15:00:00"
+}
+
+```
+
+Output
+```
+{
+	"href": "/api/appointments/8/",
+	"id": 8,
+	"vin": "1C3CC12333N120174",
+	"customer_name": "Jimmy",
+	"reason": "Washing",
+	"is_finished": true,
+	"is_vip": false,
+	"technician": {
+		"href": "/api/technicians/4/",
+		"name": "Ben Mark",
+		"employee_number": 6226,
+		"id": 4
+	},
+	"date": "2024-01-01",
+	"time": "15:00:00"
+}
+```
+
+</details>
+
+<details open>
+<summary>Delete an Appointment Output</summary>
+<br>
+
+Output
+```
+{
+	"message": "appointment deleted"
 }
 ```
 
