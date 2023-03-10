@@ -73,6 +73,7 @@ function SalesRecordForm() {
             setAutomobile('');
             setSalesPerson('');
             setCustomer('');
+            setPrice('');
         }
     }
     useEffect(() => {

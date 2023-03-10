@@ -46,8 +46,46 @@ Explain here.
 
 ## Service microservice
 
-Explain your models and integration with the inventory
-microservice, here.
+### Overview
+
+This application is designed to help manage and track automobile service appointments.
+- Users can create appointments using a user-friendly form, which includes fields for vehicle identification number (VIN), customer name, date/time, reason for appointment, and technician assigned.
+- Allows users to view a comprehensive list of scheduled appointments, which includes appointment status (canceled, or finished) and indicate if a customer is VIP based on the vin number provided in the appointment form.
+- Includes a search bar functionality that allows users to search for specific appointments by vin number.
+
+**URL and Port**: localhost:8080
+
+### Back_End
+
+#### Service Models:
+
+- **Entities**:
+
+**Appointment**: This model represents an appointment with a unique identity and a life cycle that can be active, canceled, or completed. Each instance of Appointment has properties such as vehicle identification number (VIN), customer name, date/time, reason for appointment, and technician assigned. The Appointment model also includes a property to indicate the status of each appointment instance (i.e., finished or canceled).
+
+**Technician**: The Technician model represents a unique technician with a specific employee number. Each technician is considered an entity and has its own identity.
+
+- **Value Object**:
+
+**AutomobileVO**: This model contains information about a customer's automobile and is considered a value object because it has no identity or life cycle. The data stored within this model is used to determine if the customer qualifies as a VIP and should not be updated or deleted. The properties of the AutomobileInfo model include vin, year, color.
+
+### Restful API:
+
+### Technicians:
+| Action             | Method   | URL |
+|  ------------------| ----- | --------------------------------------|
+| List Technicians      |  GET  |http://localhost:8080/api/technicians/ |
+| Create a Technician   |  POST    |http://localhost:8080/api/technicians/ |
+| Show Technician Detail|  POST   |http://localhost:8080/api/technicians/:id/ |
+| Delete a Technician   |  Delete |http://localhost:8080/api/technicians/:id/ |
+
+
+
+
+
+
+
+### Appointments:
 
 ## Sales microservice
 
