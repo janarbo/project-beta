@@ -61,4 +61,9 @@ microservice, here.
 
 The sales microservice will poll data from the automobile model in inventory and put the data into AutomobileVO model.
 
-# Sales Person:
+**Sales Person:**
+
+| Action                | Method | URL                                    |
+| ----------------------| ------ | -------------------------------------- |
+| List Sales Person     |  GET   | http://localhost:8090/api/salesperson/ |
+| Create a Sales Person |  Post  | http://localhost:8090/api/salesperson/ |
