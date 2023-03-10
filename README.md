@@ -86,6 +86,8 @@ Service microservice polls the Inventory microservice every 60 seconds for autom
 | List Technicians      |  GET  |http://localhost:8080/api/technicians/ |
 | Create a Technician   |  POST    |http://localhost:8080/api/technicians/ |
 | Show Technician Detail  |  POST    |http://localhost:8080/api/technicians/:id/ |
+| Delete a Technician  |  POST    |http://localhost:8080/api/technicians/:id/ |
+
 
 
 <details open>
@@ -143,7 +145,6 @@ Output
 <br>
 
 ```
-
    {
 	"href": "/api/technicians/3/",
 	"name": "Ben Mark",
@@ -153,6 +154,20 @@ Output
 ```
 
 </details>
+
+
+<details open>
+<summary>Delete a Technician Output</summary>
+<br>
+
+```
+{
+	"message": "technician deleted"
+}
+```
+
+</details>
+
 
 
 
@@ -218,12 +233,12 @@ Output
 </details>
 
 <details open>
-<summary>Create Appointment Input and Output</summary>
+<summary>Create an Appointment Input and Output</summary>
 <br>
 
 Input
 ```
-  {
+{
 	"customer_name": "Janar",
 	"vin":"1C3CC5FB2AN120174",
 	"technician": "3",
@@ -259,7 +274,7 @@ Output
 </details>
 
 <details open>
-<summary>Show Appointment Detail</summary>
+<summary>Show an Appointment Detail</summary>
 <br>
 
 Output
@@ -286,7 +301,7 @@ Output
 </details>
 
 <details open>
-<summary>Update Appointment Input and Output</summary>
+<summary>Update an Appointment Input and Output</summary>
 <br>
 
 Input
