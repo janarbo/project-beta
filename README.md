@@ -72,11 +72,8 @@ The sales microservice will poll data from the automobile model in inventory and
 <summary><strong>List of Sales Person</strong></summary>
 <br>
 ```
-{
-	"href": "/api/salesperson/2/",
-	"name": "Mario",
-	"number": "5374120",
-	"id": 2
-}
+docker volume create beta-data
+docker-compose build
+docker-compose up
 ```
 </details>
