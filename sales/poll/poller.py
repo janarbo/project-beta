@@ -28,7 +28,7 @@ def poll():
                         "vin": automobile["vin"],
                     }
                 )
-            print(AutomobileVO.objects.all())
+
 
         except Exception as e:
             print(e, file=sys.stderr)
