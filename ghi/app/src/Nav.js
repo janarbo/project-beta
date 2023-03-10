@@ -115,7 +115,7 @@ function Nav() {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="dropdown-item" to="sales/customer/">
+                  <NavLink className="dropdown-item" to="sales/customer">
                     Create a customer
                   </NavLink>
                 </li>

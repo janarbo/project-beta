@@ -11,7 +11,7 @@ import AutoList from './AutoList'
 import AppointmentForm from './AppointmentForm';
 import AppointmentList from './AppointmentList';
 import TechnicianForm from './TechnicianForm';
-import SearchAppointment from './AppointmentList';
+import SearchAppointment from './SearchAppointment';
 import SalesList from './SalesList';
 import SalesPersonForm from './SalesPersonForm';
 import SalesRecordForm from './SalesRecordForm';
@@ -19,7 +19,7 @@ import SalesPersonHistory from './SalesPersonHistory';
 import CustomerForm from './CustomerForm';
 
 
-function App(props) {
+function App() {
 
   return (
     <BrowserRouter>
@@ -63,8 +63,9 @@ function App(props) {
           </Route>
         </Routes>
       </div>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
+
 
 export default App;
