@@ -77,3 +77,9 @@ docker-compose build
 docker-compose up
 ```
 </details>
+
+```
+docker volume create beta-data
+docker-compose build
+docker-compose up
+```
