@@ -83,4 +83,25 @@ The sales microservice will poll data from the automobile model in inventory and
 
 </details>
 
+<details>
+<summary><strong>Create A Sales Person</strong></summary>
+<br>
 
+#### Input:
+```
+{
+	"name": "Luigi",
+	"number": "6412373"
+}
+```
+#### Ouput:
+```
+{
+	"href": "/api/salesperson/4/",
+	"name": "Luigi",
+	"number": "6412373",
+	"id": 4
+}
+```
+
+</details>
