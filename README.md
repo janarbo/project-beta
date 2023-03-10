@@ -79,7 +79,22 @@ This application is designed to help manage and track automobile service appoint
 | Show Technician Detail|  POST   |http://localhost:8080/api/technicians/:id/ |
 | Delete a Technician   |  Delete |http://localhost:8080/api/technicians/:id/ |
 
-
+<details open>
+<summary>List Technicians Output</summary>
+<br>
+```
+{
+	"technicians": [
+		{
+			"href": "/api/technicians/1/",
+			"name": "Lilian Will",
+			"employee_number": 2578,
+			"id": 1
+		},
+	]
+}
+```
+</details>
 
 
 
