@@ -43,7 +43,7 @@ Open the README.md file and add your name as "Person 1" or "Person 2", along wit
 ## Inventory
 
 #### Overview
-The inventory micorservice allows the user to create/update, list, view details, and delete for Manufactuers, Vehicle models, and Automobiles.
+The inventory micorservice allows the user to create/update, list, view details, and delete for Manufacturers, Vehicle models, and Automobiles.
 
 #### Model
 * Maufacturers
