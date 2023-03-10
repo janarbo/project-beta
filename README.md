@@ -90,7 +90,7 @@ Service microservice polls the Inventory microservice every 60 seconds for autom
 
 
 
-<details open>
+<details>
 <summary>List Technicians Output</summary>
 <br>
 
@@ -116,7 +116,7 @@ Service microservice polls the Inventory microservice every 60 seconds for autom
 
 </details>
 
-<details open>
+<details>
 <summary>Create a Technician Input & Output</summary>
 <br>
 
@@ -140,7 +140,7 @@ Output
 
 </details>
 
-<details open>
+<details>
 <summary>Show Technician Details Output</summary>
 <br>
 
@@ -156,7 +156,7 @@ Output
 </details>
 
 
-<details open>
+<details>
 <summary>Delete a Technician Output</summary>
 <br>
 
@@ -185,7 +185,7 @@ Output
 
 
 
-<details open>
+<details>
 <summary>List Appointments Output</summary>
 <br>
 
@@ -232,7 +232,7 @@ Output
 
 </details>
 
-<details open>
+<details>
 <summary>Create an Appointment Input and Output</summary>
 <br>
 
@@ -273,7 +273,7 @@ Output
 
 </details>
 
-<details open>
+<details>
 <summary>Show an Appointment Detail</summary>
 <br>
 
@@ -300,7 +300,7 @@ Output
 
 </details>
 
-<details open>
+<details>
 <summary>Update an Appointment Input and Output</summary>
 <br>
 
@@ -340,7 +340,7 @@ Output
 
 </details>
 
-<details open>
+<details>
 <summary>Delete an Appointment Output</summary>
 <br>
 
