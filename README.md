@@ -105,3 +105,9 @@ The sales microservice will poll data from the automobile model in inventory and
 ```
 
 </details>
+
+#### Customer:
+| Action                | Method | URL                                    |
+| ----------------------| ------ | -------------------------------------- |
+| List of Customer    |  GET   | http://localhost:8090/api/salesperson/ |
+| Create a Customer |  Post  | http://localhost:8090/api/salesperson/ |
