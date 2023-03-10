@@ -45,6 +45,11 @@ Open the README.md file and add your name as "Person 1" or "Person 2", along wit
 #### Overview
 The inventory micorservice allows the user to create/update, list, view details, and delete for Manufactuers, Vehicle models, and Automobiles.
 
+#### Model
+* Maufacturers
+* Vehicle Model
+* Automobile
+
 #### Manufacturer
 | Action                | Method | URL                                    |
 | ----------------------| ------ | -------------------------------------- |
@@ -212,6 +217,141 @@ The inventory micorservice allows the user to create/update, list, view details,
 ```
 
 </details>
+
+#### Automobile
+| Action                | Method | URL                                    |
+| ----------------------| ------ | -------------------------------------- |
+| List Automobiles    |  GET   | http://localhost:8100/api/automobiles/ |
+| Create a Automobile |  Post  | http://localhost:8100/api/automobiles/ |
+| Show Automobile Detail     |  GET   | http://localhost:8100/api/automobiles/:vin/ |
+| Update a Automobile|  Put  | http://localhost:8100/api/automobiles/:vin/|
+| Delete a Automobile |  Del | http://localhost:8100/api/automobiles/:vin/|
+
+<details>
+<summary><strong>List of Automobile</strong></summary>
+<br>
+
+```
+{
+			"href": "/api/automobiles/12ABC34DEF56GHI78/",
+			"id": 1,
+			"color": "White",
+			"year": 2023,
+			"vin": "12ABC34DEF56GHI78",
+			"model": {
+				"href": "/api/models/2/",
+				"id": 2,
+				"name": "Camry",
+				"picture_url": "https://media.rti.toyota.com/config/pub/3d/toyota/1008125/1000854/Exterior/1/1200_663_PNG/5dd463c2c1de5d759c35e4878342d42a77f3ef314e490e7b1df0b1c363a87cb8.png",
+				"manufacturer": {
+					"href": "/api/manufacturers/1/",
+					"id": 1,
+					"name": "Toyota"
+				}
+			}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Create and Update Automobile</strong></summary>
+<br>
+
+#### Input:
+```
+{
+  "color": "Black",
+  "year": 2023,
+  "vin": "ZYX987WUT654RSQ32",
+  "model_id": 4
+}
+```
+#### Output:
+```
+{
+	"href": "/api/automobiles/ZYX987WUT654RSQ32/",
+	"id": 3,
+	"color": "Black",
+	"year": 2023,
+	"vin": "ZYX987WUT654RSQ32",
+	"model": {
+		"href": "/api/models/4/",
+		"id": 4,
+		"name": "Model 3",
+		"picture_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMKPFeL1Tof_zan6rU8C7ZNHmZcrv_wVmhvg&usqp=CAU",
+		"manufacturer": {
+			"href": "/api/manufacturers/3/",
+			"id": 3,
+			"name": "Tesla"
+		}
+	}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Detail of Automobile</strong></summary>
+<br>
+
+```
+{
+	"href": "/api/automobiles/ABC123EFG456HIJ78/",
+	"id": 2,
+	"color": "White",
+	"year": 2023,
+	"vin": "ABC123EFG456HIJ78",
+	"model": {
+		"href": "/api/models/3/",
+		"id": 3,
+		"name": "CR-V",
+		"picture_url": "https://www.notebookcheck.net/fileadmin/_processed_/webp/Notebooks/News/_nc3/2024_Honda_Prologue_Styling_Reve-q82-w240-h.webp",
+		"manufacturer": {
+			"href": "/api/manufacturers/2/",
+			"id": 2,
+			"name": "Honda"
+		}
+	}
+}
+```
+
+</details>
+
+<details>
+<summary><strong>Delete a Automobile</strong></summary>
+<br>
+
+```
+{
+	"href": "/api/automobiles/12ABC34DEF56GHI78/",
+	"id": null,
+	"color": "White",
+	"year": 2023,
+	"vin": "12ABC34DEF56GHI78",
+	"model": {
+		"href": "/api/models/2/",
+		"id": 2,
+		"name": "Camry",
+		"picture_url": "https://media.rti.toyota.com/config/pub/3d/toyota/1008125/1000854/Exterior/1/1200_663_PNG/5dd463c2c1de5d759c35e4878342d42a77f3ef314e490e7b1df0b1c363a87cb8.png",
+		"manufacturer": {
+			"href": "/api/manufacturers/1/",
+			"id": 1,
+			"name": "Toyota"
+		}
+	}
+}
+```
+
+</details>
+
+#### React
+* Have a list detail of Maufacturers
+* Have a form to create Maufacturers
+* Have a list of Vehicle Models
+* Have a form to create Vehicle Models
+* Have a list of Automobiles
+* Have a form to create Automobiles
 
 ## Service microservice
 
